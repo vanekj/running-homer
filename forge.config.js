@@ -1,10 +1,22 @@
 module.exports = {
-  packagerConfig: {},
+  packagerConfig: {
+    asar: false,
+    icon: './images/icon'
+  },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin'],
+      config: {
+        icon: './images/icon.icns'
+      },
+    },
+    {
+      name: '@electron-forge/maker-dmg',
+      config: {
+        icon: './images/icon.icns'
+      },
     }
   ],
   plugins: [
@@ -26,4 +38,15 @@ module.exports = {
       },
     },
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'vanekj',
+          name: 'running-homer'
+        }
+      }
+    }
+  ]
 };

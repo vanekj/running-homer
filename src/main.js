@@ -21,12 +21,12 @@ const createWindow = () => {
       roundedCorners: false,
       skipTaskbar: true,
       titleBarStyle: 'hidden',
-      transparent: true,
+      transparent: true
     });
     screenWindow.setIgnoreMouseEvents(true)
+    // screenWindow.webContents.openDevTools();
     if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
       screenWindow.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);
-      // appWindow.webContents.openDevTools();
     } else {
       screenWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
     }
