@@ -42,6 +42,8 @@ module.exports = {
     {
       name: '@electron-forge/publisher-github',
       config: {
+        draft: false,
+        prerelease: false,
         repository: {
           owner: 'vanekj',
           name: 'running-homer'
