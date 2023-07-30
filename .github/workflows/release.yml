@@ -34,9 +34,6 @@ jobs:
 
       - name: Build and publish
         uses: tauri-apps/tauri-action@v0
-
-      - name: Publish
-        run: npm run publish
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
