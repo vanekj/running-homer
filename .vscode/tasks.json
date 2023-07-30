@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ui:dev",
+      "type": "shell",
+      "problemMatcher": "$tsc-watch",
+      "isBackground": true,
+      "command": "npm",
+      "args": [
+        "run",
+        "dev"
+      ]
+    },
+    {
+      "label": "ui:build",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "build"
+      ]
+    }
+  ]
+}

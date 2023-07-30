@@ -3,7 +3,7 @@ name: Release
 on: workflow_dispatch
 
 jobs:
-  build:
+  release:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -12,18 +12,35 @@ jobs:
         node: [18]
 
     steps:
-      - name: Checkout 🛎
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup node env 🏗
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Setup Rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+          cache: 'npm'
 
-      - name: Install dependencies 👨🏻‍💻
+      - name: Install dependencies
         run: npm ci
 
-      - name: Publish app 🛠
+      - name: Build and publish
+        uses: tauri-apps/tauri-action@v0
+
+      - name: Publish
         run: npm run publish
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          releaseName: 'v__VERSION__'
+          releaseBody: 'New pack of 🍩'
+          releaseDraft: false
+          prerelease: false
