@@ -1,0 +1,79 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "Running Homer",
+    "version": "1.1.0"
+  },
+  "tauri": {
+    "macOSPrivateApi": true,
+    "allowlist": {
+      "all": true
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.vanekj.running-homer"
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "label": "window-0",
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "window-1",
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "window-2",
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "window-3",
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "window-4",
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "window-5",
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "window-6",
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "window-7",
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "window-8",
+        "transparent": true,
+        "visible": false
+      },
+      {
+        "label": "window-9",
+        "transparent": true,
+        "visible": false
+      }
+    ]
+  }
+}

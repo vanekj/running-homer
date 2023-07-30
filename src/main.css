@@ -1,0 +1,60 @@
+:root {
+  --homer-width: 266px;
+  --homer-speed: 10s;
+  background: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#homer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  animation: running-homer var(--homer-speed) linear infinite;
+  z-index: 99999;
+}
+
+@keyframes running-homer {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: calc(100% + var(--homer-width));
+  }
+}
+
+#donuts {
+  position: absolute;
+  overflow: hidden;
+  inset: 0;
+  z-index: 0;
+}
+
+#donuts>img {
+  --donut-speed: 4000ms;
+
+  position: absolute;
+  outline: 0;
+  border: 0;
+  display: block;
+  animation: falling-donut var(--donut-speed) linear forwards;
+  will-change: top;
+}
+
+@keyframes falling-donut {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 150%;
+  }
+}

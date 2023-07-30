@@ -1,32 +1,20 @@
 {
   "name": "running-homer",
-  "version": "1.0.0",
-  "productName": "Running Homer",
-  "description": "It does what it says",
-  "main": ".vite/build/main.js",
+  "version": "1.1.0",
+  "type": "module",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish"
-  },
-  "author": {
-    "name": "vanekj",
-    "email": "info@jakub-vanek.eu"
-  },
-  "devDependencies": {
-    "@electron-forge/cli": "^6.2.1",
-    "@electron-forge/maker-deb": "^6.2.1",
-    "@electron-forge/maker-dmg": "^6.2.1",
-    "@electron-forge/maker-rpm": "^6.2.1",
-    "@electron-forge/maker-squirrel": "^6.2.1",
-    "@electron-forge/maker-zip": "^6.2.1",
-    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
-    "@electron-forge/plugin-vite": "^6.2.1",
-    "@electron-forge/publisher-github": "^6.2.1",
-    "electron": "25.3.2"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "icons": "tauri icon ./src-tauri/icons/icon.png"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "@tauri-apps/api": "^1.4.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.4.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7"
   }
 }
